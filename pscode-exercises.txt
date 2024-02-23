@@ -1,0 +1,43 @@
+// Exercise 1: Calculate the Sum of Two Numbers
+
+Ask the user to input a number
+ask the user to input an another number
+if numbers were valid
+    display the sum of those two numbers
+else
+    display a message saying those values were not valid and repeat the first two steps until they are valid and display the sum
+
+
+// Exercise 2: Check if a Number is Even or Odd
+
+get a number from the user
+if number is not valid, ask for input until it is valid
+if the number is valid
+    if number % 2 evaluates to 0
+        tell the user the number is even
+    else
+        tell the user the number is odd
+
+
+    
+
+// Exercise 3: 
+Write pseudo code that will perform the following.    
+
+a) Read in 5 separate numbers.
+b) Calculate the average of the five numbers.
+c) Find the smallest (minimum) and largest (maximum) of the five entered numbers.
+d) Write out the results found from steps b and c with a message describing what they are
+
+
+ask the user for 5 numbers
+verify input are numbers
+    if any input is not a valid number, let the user know and start the input process again
+calculate the average (total value of each number / number of values entered)
+create variables to track the minimum and maximum values and assign the first number in the list to each
+for each number in the list of numbers
+
+
+    
+
+-- END --
