@@ -34,8 +34,16 @@ ask the user for 5 numbers
 verify input are numbers
     if any input is not a valid number, let the user know and start the input process again
 calculate the average (total value of each number / number of values entered)
-create variables to track the minimum and maximum values and assign the first number in the list to each
-for each number in the list of numbers
+create variables to track the minimum and maximum values
+find minimum by looping through the numbers
+    if first iteration, assign the first number to min value
+    else compare the current min value with the current number in the list
+        if the current number in the list is less than the current min value, assign that to be the new min value
+find maximum by looping through the numbers
+    if first iteration, assign the first number to max value
+    else compare the current max value with the current number in the list
+        if the current number in the list is greater than the current min value, assign that to be the new max value
+display to the user the average, min, and max
 
 
     
