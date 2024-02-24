@@ -1,5 +1,6 @@
 const buttonOne = document.getElementById("exercise-btn-one");
 const buttonTwo = document.getElementById("exercise-btn-two");
+const buttonThree = document.getElementById("exercise-btn-three");
 
 function runExerciseOne() {
     let numberOne = 0;
@@ -41,5 +42,83 @@ function runExerciseTwo() {
 }
 
 
+function runExerciseThree() {
+    let numbers = [];
+    let maxInputs = 5;
+    let average = 0;
+    let minValue = 0;
+    let maxValue = 0;
+    let totalValue = 0;
+
+    let inputsAreValid = false;
+
+    do {
+        numbers = getNumbers(numbers, maxInputs);
+        inputsAreValid = isArrayValid(numbers);
+
+        if (!inputsAreValid) {
+            alert("One or more of the entered numbers was invalid. Please try again.");
+            numbers = []
+        }
+    } while(!inputsAreValid);
+
+    // Find max value, not using the built in function
+    for (let i = 0; i < numbers.length; i++) {
+        if (i === 0) {
+            maxValue = numbers[i];
+        } else {
+            if (numbers[i] > maxValue) {
+                maxValue = numbers[i];
+            }
+        } 
+    }
+
+    // find min
+    for (let i = 0; i < numbers.length; i++) {
+        if (i === 0) {
+            minValue = numbers[i];
+        } else {
+            if (numbers[i] < minValue) {
+                minValue = numbers[i];
+            }
+        } 
+    }
+
+    // find avg
+    for (let i = 0; i < numbers.length; i++) {
+        totalValue += numbers[i];
+    }
+    average = totalValue / numbers.length;
+
+    alert(`The average of the entered numbers is ${average}. The minimum value is ${minValue} and the maximum value is ${maxValue}`);
+}
+
+function getNumbers(numberArray, maxNumbers) {
+    do {
+        let number = prompt("Enter a number");
+        numberArray.push(parseInt(number));
+
+    } while (numberArray.length < maxNumbers);
+
+    return numberArray;
+}
+
+function isArrayValid(numberArray) {
+    let invalidEntryCount = 0;
+    for (let i = 0; i < numberArray.length; i++) {
+        if (isNaN(numberArray[i])) {
+            invalidEntryCount += 1;
+        }
+    }
+
+    if (invalidEntryCount === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 buttonOne.addEventListener("click", runExerciseOne);
 buttonTwo.addEventListener("click", runExerciseTwo);
+buttonThree.addEventListener("click", runExerciseThree);
