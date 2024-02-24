@@ -1,5 +1,5 @@
-
 const buttonOne = document.getElementById("exercise-btn-one");
+const buttonTwo = document.getElementById("exercise-btn-two");
 
 function runExerciseOne() {
     let numberOne = 0;
@@ -21,5 +21,25 @@ function runExerciseOne() {
 }
 
 
+function runExerciseTwo() {
+    let number = 0;
+
+    do {
+        number = prompt("Enter a number to see whether it is even or odd.");
+
+        if (isNaN(number)) {
+            alert("That was not a number. Please try again.");
+        }
+
+    } while (isNaN(number))
+
+    if (number % 2 == 0) {
+        alert(`${number} is even`);
+    } else {
+        alert(`${number} is odd`);
+    }
+}
+
 
 buttonOne.addEventListener("click", runExerciseOne);
+buttonTwo.addEventListener("click", runExerciseTwo);
